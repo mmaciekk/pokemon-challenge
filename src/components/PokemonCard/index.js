@@ -1,16 +1,25 @@
-import React from 'react';
-import {Card, CardImg, CardText, CardBody, CardTitle} from 'reactstrap';
+import React, {Component} from 'react'
+import './index.css';
+import {Card, CardBody, CardImg, CardText, CardTitle} from 'reactstrap';
 
-const PokemonCard = (props) => {
-    return (
-            <Card  margin-bottom="10px">
-                <CardImg top width="100%" src={props.img} alt={`${props.name} image`} />
+class PokemonCard extends Component {
+
+    matchTypeToBadge() {
+        const types = this.props.type
+        return types.map((type,index) => <span key={index} className={`${type} badge`}>{type}</span>)
+    }
+
+    render() {
+        return (
+            <Card>
+                <CardImg top width="100%" src={this.props.img} alt={`${this.props.name} image`}/>
                 <CardBody>
-                    <CardTitle>#{props.num} {props.name}</CardTitle>
-                    <CardText>{props.type.join(' ')}</CardText>
+                    <CardTitle>#{this.props.num} {this.props.name}</CardTitle>
+                    <CardText>{this.matchTypeToBadge()}</CardText>
                 </CardBody>
             </Card>
-    );
+        );
+    }
 };
 
 export default PokemonCard;
