@@ -18,10 +18,16 @@ class Content extends Component {
                             <Col key={index} xs={12} sm={12} md={3} lg={3}>
                             <PokemonCard
                                 key={pokemon.id}
+                                id={pokemon.id}
                                 name={pokemon.name}
                                 num={pokemon.num}
                                 img={pokemon.img}
-                                type={pokemon.type}/>
+                                type={pokemon.type}
+                                spawnChance={pokemon.spawn_chance}
+                                height={pokemon.height}
+                                weight={pokemon.weight}
+                                weaknesses={pokemon.weaknesses}
+                            />
                             </Col>)}
                     </Row>);
                 })}
