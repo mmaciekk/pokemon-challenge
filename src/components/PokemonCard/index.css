@@ -96,8 +96,9 @@
     margin: 0 5px;
 }
 
-
-
-
-
+.card-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
 
